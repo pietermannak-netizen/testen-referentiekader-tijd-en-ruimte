@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#142e2b">
+  <title>Tijdreiziger · Zet de geschiedenis op z’n plek</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cards.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">⌛</span> tijdreiziger<span class="brand-dot">.</span></a><span class="course">GESCHIEDENIS <span>/</span> ONDERBOUW VO</span><span class="edition">Een reis door vijf periodes</span></header>
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow"><span></span> JOUW MISSIE DOOR DE TIJD</p><h1>Alles heeft <br>z’n <em>tijd.</em></h1><p class="intro-copy">Tien speelkaarten. Vijf tijdvakken. Bekijk de afbeelding, lees het verhaal en tik op de juiste periode.</p></div>
+      <div class="mission"><span class="mission-label">HET REISPLAN</span><div class="mission-step"><b>01</b><p>Pak een gebeurtenis<span>Sleep de kaart of klik erop.</span></p></div><div class="mission-step"><b>02</b><p>Kies de juiste periode<span>Laat los of klik op een tijdvak.</span></p></div><div class="mission-step"><b>03</b><p>Ontdek het verhaal<span>Lees de uitleg en reis verder.</span></p></div></div>
+    </section>
+    <section class="game" aria-label="Tijdvakkenspel">
+      <div class="game-toolbar"><div class="mode-picker" role="group" aria-label="Spelmodus"><button id="practice" class="active" aria-pressed="true">Oefenen <span>met jaartallen</span></button><button id="challenge" aria-pressed="false">Uitdaging <span>zonder jaartallen</span></button></div><button id="restart" class="text-button">↻ Opnieuw</button></div>
+      <div class="progress-row"><span id="round-label">GEBEURTENIS 1 VAN 10</span><span id="score">0 in één keer goed</span></div><div class="progress-track" role="progressbar" aria-label="Voortgang" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0"><div id="progress-fill"></div></div>
+      <div id="play-area">
+        <div class="card-stage"><span class="stage-note" aria-hidden="true">JOUW VOLGENDE SPEELKAART</span><button class="event-card" id="event-card" draggable="true" aria-pressed="false"><span class="card-top"><span id="event-place"></span><span id="card-number" class="card-number"></span></span><svg id="event-art" class="card-illustration" role="img" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice"><image id="card-sheet" href="assets/history-cards.png" width="971" height="1619" aria-hidden="true"/></svg><span id="event-title" class="event-title"></span><span id="event-description" class="event-description"></span><span id="event-date" class="event-date"></span><span class="card-signature" aria-hidden="true">✦ TIJDREIZIGER ✦</span></button><p id="selection-hint" class="selection-hint">Bekijk de kaart en tik op het juiste tijdvak ↓</p></div>
+        <div class="timeline-heading"><h2>Waar hoort dit verhaal thuis?</h2><span>VAN TOEN NAAR NU →</span></div>
+        <div id="timeline" class="timeline"></div>
+        <div class="feedback-row"><div id="feedback" role="status" aria-live="polite">Klaar voor vertrek? Kies een tijdvak.</div><button id="next" class="primary-button" hidden>Volgende gebeurtenis →</button></div>
+      </div>
+      <section id="results" class="results" hidden aria-labelledby="results-title"><p class="eyebrow">BESTEMMING BEREIKT</p><h2 id="results-title" tabindex="-1">Jouw reis zit erop!</h2><p id="result-score" class="result-score"></p><p id="result-message"></p><button id="again" class="primary-button">Nog een tijdreis ↻</button><details><summary>Bekijk je gebeurtenissen en de uitleg</summary><ol id="review"></ol></details></section>
+    </section>
+    <aside class="context"><span class="context-icon" aria-hidden="true">i</span><p><strong>Een tijdvak is een hulpmiddel.</strong> De grenzen zijn ongeveer: veranderingen gebeurden niet overal tegelijk. Dit spel volgt de vijf hoofdperiodes voor onderbouw VO; de moderne tijd loopt van 1800 tot heden.</p></aside>
+  </main>
+  <footer><span>Gemaakt voor nieuwsgierige tijdreizigers.</span><span>Gebaseerd op SLO · Referentiekader Tijd, onderbouw VO, p. 15–16 <button id="source-toggle" aria-expanded="false" aria-controls="source-note">Over de bron ↗</button></span><p id="source-note" hidden>Bron: <cite>Eindadvies referentiekaders Ruimte en Tijd</cite> (SLO, 2022, met addendum maart 2026), onderdeel 2b. De vijf hoofdperiodes en hun namen komen uit het advies; gebeurtenissen en uitleg zijn eigen lesvoorbeelden. De afbeeldingen zijn met AI gemaakte historische illustraties, geen historische bronnen of exacte reconstructies. Het addendum wijst op kleine verschillen met de kerndoelen. Dit spel oefent het ordenen in de tijd en dekt niet het hele referentiekader.</p></footer>
+</body>
+</html>

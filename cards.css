@@ -1,0 +1,92 @@
+/* Geïllustreerde speelkaarten; alle afbeeldingen worden lokaal geladen. */
+.event-card {
+  width: 350px;
+  padding: 12px;
+  background: #fffdf3;
+  border: 1px solid #c8c9b5;
+  border-bottom: 4px solid #849471;
+  border-radius: 15px;
+  box-shadow: 4px 5px 0 #e5e6d6, 5px 6px 0 #bfc4af, 8px 10px 0 #eeeee2, 9px 11px 0 #cbd0bd, 0 18px 28px #24392a19;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+.card-top { padding: 0 3px 9px; gap: 8px; }
+.card-number { font-size: 10px; letter-spacing: 1px; white-space: nowrap; }
+.card-illustration {
+  display: block;
+  width: 100%;
+  height: 195px;
+  border: 1px solid #d8d5bb;
+  border-radius: 8px;
+  background: #e8e3ce;
+  pointer-events: none;
+}
+.event-title { font-size: 25px; margin: 13px 5px 8px; }
+.event-description { padding: 0 7px; font-size: 13px; }
+.event-date { margin-top: 10px; font-size: 12px; background: #e8ebdc; }
+.card-signature { font-size: 8px; letter-spacing: 2px; color: #849471; padding: 11px 0 0; }
+.stage-note { margin-bottom: 18px; }
+.event-card[aria-pressed=true] { outline: 3px solid #426b4c; outline-offset: 4px; }
+.answered .event-card { border-color: #426b4c; }
+.primary-button, .text-button, .mode-picker button { min-height: 44px; }
+
+@media (max-width: 600px) {
+  body { -webkit-text-size-adjust: 100%; padding-bottom: env(safe-area-inset-bottom); }
+  .topbar { min-height: 52px; padding: 10px max(16px, env(safe-area-inset-right)) 10px max(16px, env(safe-area-inset-left)); }
+  .brand { font-size: 23px; }
+  .brand-icon { font-size: 22px; }
+  .course { font-size: 8px; line-height: 1.6; max-width: 110px; }
+  .intro { display: block; padding: 14px 4px 12px; }
+  .intro .eyebrow, .intro-copy, .mission { display: none; }
+  .intro h1 { font-size: 31px; line-height: 1.1; letter-spacing: -1px; margin: 0; }
+  .intro h1 br { display: none; }
+  .intro h1 br::after { content: ' '; }
+  main { padding: 0 max(12px, env(safe-area-inset-right)) 0 max(12px, env(safe-area-inset-left)); }
+  .game { padding: 10px 12px 4px; border-radius: 13px; scroll-margin-top: 8px; }
+  .game-toolbar { gap: 5px; }
+  .mode-picker { gap: 0; padding: 3px; }
+  .mode-picker button { font-size: 11px; padding: 6px 10px; }
+  .mode-picker button span { font-size: 9px; display: block; margin: 2px 0 0; }
+  .text-button { font-size: 11px; padding: 7px 4px; }
+  .progress-row { margin: 12px 0 7px; font-size: 9px; }
+  .card-stage { padding: 14px 2px 10px; }
+  .stage-note { display: none; }
+  .event-card { width: min(100% - 12px, 330px); padding: 10px; transform: rotate(-1deg); }
+  .event-card:hover, .event-card[aria-pressed=true] { transform: none; }
+  .card-top { font-size: 8px; letter-spacing: 1.1px; padding-bottom: 8px; }
+  .card-number { font-size: 9px; }
+  .card-illustration { height: clamp(120px, 39vw, 170px); border-radius: 7px; }
+  .event-title { font-size: 21px; margin: 10px 3px 7px; }
+  .event-description { font-size: 12px; line-height: 1.45; padding: 0 3px; }
+  .event-date { margin-top: 8px; padding: 4px 9px; font-size: 11px; }
+  .card-signature { display: none; }
+  .selection-hint { margin: 16px 0 0; font-size: 10px; line-height: 1.4; }
+  .timeline-heading { margin-bottom: 8px; }
+  .timeline-heading h2 { font-size: 12px; }
+  .timeline-heading > span { display: none; }
+  .timeline { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; scroll-margin: 12px; }
+  .period, .period:last-child {
+    min-height: 56px;
+    padding: 9px 6px 7px;
+    border-top-width: 3px;
+    border-radius: 7px;
+    justify-content: center;
+    transform: none;
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
+  }
+  .period:last-child { grid-column: 1 / -1; }
+  .period-symbol, .period-number, .period-alias { display: none; }
+  .period-name { font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; }
+  .period-dates { font-size: 10px; margin-top: 4px; }
+  .period:hover:not(:disabled) { transform: none; box-shadow: none; }
+  .feedback-row { padding: 12px 0 10px; min-height: 50px; gap: 10px; scroll-margin: 12px; }
+  #feedback { font-size: 12px; line-height: 1.5; }
+  .feedback-row .primary-button { width: 100%; min-height: 48px; font-size: 14px; }
+  .context { margin: 18px 4px; font-size: 10px; }
+  footer { padding: 16px; font-size: 10px; }
+  .results { padding: 24px 2px; }
+  .results h2 { font-size: 31px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
